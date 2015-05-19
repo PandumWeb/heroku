@@ -1,0 +1,99 @@
+
+<div class="body">
+	<div class="main-wrap container">
+		<div class="row">
+			<div class="col-md-9 ts-main-left">
+				<!-- HEADER -->
+				<header>
+					<div class="container">
+    							<div class="row">
+    								<div class="col-md-6 logo">
+    									<h3><a href="index.html" title="Trendy Stuff"><img src="images/logo.png" class="img-responsive" alt=""/></a></h3>
+    								</div>
+    								<div class="col-md-6">
+    									<ul class="ts-social">
+    										<li><a href="https://fr.linkedin.com/pub/linda-lor/b0/154/662"><span class="fa fa-linkedin"></span></a></li>
+    										<li><a href="https://twitter.com/lindalorweb"><span class="fa fa-twitter"></span></a></li>
+    									</ul>
+    								</div>
+    							</div>
+    						</div>
+				</header>
+
+				<!-- NAVIGATION -->
+				<div class="container">
+    						<div class="row">
+    							<div class="col-md-12">
+    								<nav id="nav_menu">
+                                        <ul>
+                                            <li>
+                                                <a href='/'><i class="fa fa-home"></i> Accueil</a>
+                                            </li>
+                                            <li><a href='/about'><i class="fa fa-user"></i> A propos</a></li>
+                                            <li>
+                                                <a href='/portfolio'><i class="fa fa-briefcase"></i> Portfolio</a>
+                                            </li>
+                                            <li>
+                                            <a href='/resources'><i class="fa fa-globe"></i> Ressources</a>
+                                            </li>
+                                            <li>
+                                                <a href='#'><i class="fa fa-comment"></i> Blog</a>
+                                            </li>
+                                            <li class='active'><a href='/contact'><i class="fa fa-envelope"></i> Contact</a></li>
+                                        </ul>
+                                    </nav>
+    							</div>
+    						</div>
+    					</div>
+				
+
+				<div class="container">
+					<div class="row">
+						<div class="contact-info">
+							<!-- CONTACT FORM -->
+							<div class="comment-form">
+								<div class="content-head">
+									<h3>Concter moi</h3>
+									<p><span>envoyez moi un petit message</span></p>
+								</div>
+								<form id="contactForm" action="php/contact.htm" method="post">
+									<div class="row">
+										<div class="col-md-6">
+											<span><i class="fa fa-user"></i></span>
+											<input type="text" name="senderName" id="senderName" placeholder="Name" Required>
+											<span><i class="fa fa-envelope-o"></i></span>
+											<input type="email" name="senderEmail" id="senderEmail" placeholder="e-mail" Required>
+											<span><i class="fa fa-link"></i></span>
+											<input type="text" name="subject" id="subject" placeholder="Subject">
+										</div>
+										<div class="col-md-6">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+											<button type="submit">Envoyer</button>
+										</div>
+									</div>
+								</form>
+								<div id="successMessage" class="successmessage">
+									<p><span class="success-ico"></span> Thanks for sending your message! We'll get back to you shortly.</p>
+								</div>
+								<div id="failureMessage" class="errormessage">
+									<p><span class="error-ico"></span> There was a problem sending your message. Please try again.</p>
+								</div>
+								<div id="incompleteMessage" class="statusMessage">
+									<p>Please complete all the fields in the form before sending.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="clearfix space20"></div>
+
+    				 <!-- FOOTER-COPYRIGHT -->
+                        <%= render 'layouts/footer' %>
+                    </div> <!-- ts-main-left -->
+                        <!-- SIDEBAR -->
+                        <%= render 'layouts/sidebar' %>
+		</div>
+	</div>
+</div>
+
