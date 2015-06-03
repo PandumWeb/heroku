@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/sign_up' => redirect('accueil')
+  # get 'users/sign_up' => redirect('accueil')
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   resources :categories do
