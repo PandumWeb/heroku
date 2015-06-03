@@ -1,0 +1,21 @@
+<%= render 'layouts/menu' %>
+<h1>Posts</h1>
+<% @posts.each do |post|%>
+<div class="col-xs-12 col-md-6">
+	<div class="panel panel-default">
+		<div class="panel-image">
+			<%= image_tag post.image.url, :class=>"panel-image-preview" %>
+		</div>
+		<div class="panel-body">
+			<h3 class="text-left"><%= link_to post.title, post %></h3>
+			<small><%= post.created_at.strftime("%d %B %Y")%></small>
+			<p class="text-right"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><%= link_to post.category.name,category_posts_path(post.category) %></p>
+	
+			<p><%= truncate raw(post.body), length: 160 %></p>
+		</div>
+		<div class="panel-footer text-center">
+			<%= link_to 'read more', post %> 
+		</div>
+	</div>
+</div>
+<% end %>

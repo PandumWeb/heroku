@@ -1,0 +1,14 @@
+<%= form_for ([@post,@post.comments.build]) do |f| %>
+  <form>
+    <div class="form-group">
+      <%= f.label :name %><br>
+      <%= f.text_field :name ,:class=>"form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :body %><br>
+      <%= f.text_area :body,:class=>"form-control" %>
+    </div>
+
+      <%= f.submit class: "btn btn-primary", :value => "Send" %>
+  </form>
+<% end %>

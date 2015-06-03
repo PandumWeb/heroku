@@ -1,0 +1,44 @@
+.thumbnail > img, .thumbnail a > img{
+    width: 100%;
+}
+#showCategory{
+    text-align: center;
+}
+
+/**** posts *****/
+.panel-image-preview{
+	width: 100%;
+}
+
+.option{
+	margin: 15px;
+}
+
+.form{
+	margin: 20px;
+}
+.image_upload{
+	float: right;
+}
+
+input[type='file'].form-control
+{
+    margin: 0;
+    padding: 0;
+
+    top: 0;
+    right: 0;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.pattern{
+	height: 200px;
+	width: 200px;
+}
+
+.panel-footer{
+    background: #2c3e50;
+    color: #fff;
+}

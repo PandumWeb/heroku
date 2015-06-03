@@ -1,0 +1,82 @@
+<div class="body">
+    <div class="main-wrap container">
+        <div class="row">
+            <div class="col-md-9 ts-main-left">
+                <!-- HEADER -->
+                <header>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 logo">
+                                <h3><a href="index.html" title="Trendy Stuff"><img src="images/logo.png" class="img-responsive" alt=""/></a></h3>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="ts-social">
+                                    <li><a href="https://fr.linkedin.com/pub/linda-lor/b0/154/662"><span class="fa fa-linkedin"></span></a></li>
+                                    <li><a href="https://twitter.com/lindalorweb"><span class="fa fa-twitter"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- NAVIGATION -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <nav id="nav_menu">
+                                <ul>
+                                    <li>
+                                        <a href='/'><i class="fa fa-home"></i> Accueil</a>
+                                    </li>
+                                    <li><a href='/about'><i class="fa fa-user"></i> A propos</a></li>
+                                    <li>
+                                        <a href='/portfolio'><i class="fa fa-briefcase"></i> Portfolio</a>
+                                    </li>
+                                    <li>
+                                        <a href='/resources'><i class="fa fa-globe"></i> Ressources</a>
+                                    </li>
+                                    <li  class='active'>
+                                        <a href='#'><i class="fa fa-comment"></i> Blog</a>
+                                    </li>
+                                    <li><a href='/contact'><i class="fa fa-envelope"></i> Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PORTFOLIO CONTENT -->
+                <div class="container blog-content" id="home-blog">
+                    <div class="row">
+                    <% @posts.each do| post| %>
+                        <div class="col-md-4">
+                            <%= image_tag post.image.url, :class=>"img-responsive post_image" %>
+                                <div class="hb-inner">
+                                     <div class="hb-meta">
+                                        <i class="fa fa-comments"></i>
+                                         <span><%= post.comments.count %> commentaire(s)</span>
+                                    </div>
+                                     <h4><%= link_to post.title, post %></h4>
+                                    <div class="sep"></div>
+                                    <p><%= truncate raw(post.body), length: 160 %></p>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+                <!-- PORTFOLIO CONTENT -->
+
+                
+                    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+                
+
+
+
+                <!-- FOOTER-COPYRIGHT -->
+                <%= render 'layouts/footer' %>
+            </div> <!-- ts-main-left -->
+            <!-- SIDEBAR -->
+            <%= render 'layouts/sidebar' %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<%= form_for @post do |f| %>
+  <div class="form">
+<form>
+  <% if @post.errors.any? %>
+  <h2><%= pluralize(@post.errors.count,"error")%> precented this post from saving</h2>
+  <ul>
+    <% @post.errors.full_messages.each do |msg|%>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+    <div class="form-group">
+      <%= f.label :title %><br>
+      <%= f.text_field :title, :class=>"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :body %><br>
+        <%= f.cktext_area :body %>
+    </div>
+    <div class="form-group">
+      <%= f.label :category %><br>
+      <%= f.collection_select :category_id, Category.all, :id, :name, :include_blank => false %>
+    </div>
+
+     <div class="form-group">
+      <%= f.label :image %><br>
+      <%= f.file_field :image %>
+    </div>
+
+      <%= f.submit class: "btn btn-primary", :value => "Send" %>
+     
+  </form>
+     </div>
+<% end %>
+
+

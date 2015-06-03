@@ -1,3 +1,4 @@
+
 /*------------------------------------------------------------------
 Theme Name: TRENDY
 Version:	1.0
@@ -41,10 +42,11 @@ body {
 	color: #000;
 	background: #e2e6ed;
 	width: 100%;
-	overflow: hidden;
+
 	position: relative;
 	height: 100%;
 }
+
 
 p {
 	line-height: 21px;
@@ -3917,4 +3919,16 @@ figcaption{
         width: 20px;
         height: 20px;
     }
+}
+/****** Posts *****/
+.panel-footer{
+    background: #2c3e50;
+}
+.panel-footer a{
+color: #fff;
+}
+
+.post_image{
+	width: 240px;
+	height: 159px;
 }

@@ -1,14 +1,31 @@
 Rails.application.routes.draw do
+  get 'users/sign_up' => redirect('accueil')
+  mount Ckeditor::Engine => '/ckeditor'
+  devise_for :users
+  resources :categories do
+  resources :posts
+end
+resources :posts do
+    resources :comments
+  end
+  # resources :categories
+  # resources :comments
+  # resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'fronts#index'
-   get 'contact' =>'fronts#contact'
-   get 'resources' =>'fronts#resources'
-   get 'about' =>'fronts#about'
-   get 'portfolio' =>'fronts#portfolio'
-   
+  
+  get 'accueil'=>'fronts#index'
+  get 'contact' =>'fronts#contact'
+  get 'resources' =>'fronts#resources'
+  get 'about' =>'fronts#about'
+  get 'portfolio' =>'fronts#portfolio'
+  get 'blog' =>'fronts#blog'
+  get 'blog-single' =>'fronts#blogSingle'
+
+  root 'posts#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

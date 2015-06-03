@@ -1,0 +1,13 @@
+<%= render 'layouts/menu' %>
+<div class="row">
+  <div class="col-sm-6 col-md-4  block-center">
+    <div class="thumbnail">
+      <%= image_tag @category.image.url(:medium) %>
+      <div class="caption">
+        <h3 id="showCategory"><%= @category.name %></h3>
+      </div>
+    </div>
+  </div>
+</div><br>
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

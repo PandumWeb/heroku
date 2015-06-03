@@ -1,0 +1,25 @@
+<%= render 'layouts/menu' %>
+<div class="col-xs-12 col-md-12 col-lg-12">
+	<div class="panel panel-default">
+		<div class="panel-image">
+			<%= image_tag @post.image.url, :class=>"panel-image-preview" %>
+		</div>
+		<div class="panel-body">
+			<h3 class="text-left"><%= @post.title %></h3>
+			<small>Submitted <%= time_ago_in_words(@post.created_at) %> ago</small>
+			<p><%= raw(@post.body) %></p>
+		</div>
+		<p><small><%= @post.comments.count %> comment(s)</small></p>
+		<%= render @post.comments %>
+		<hr>
+		<h4>Add a comment:</h4>
+		<%= render "comments/form" %>
+	</div>
+</div>
+<% if @post.user == current_user %>
+<p class="option">
+	<%= link_to 'Edit', edit_post_path(@post) %> |
+	<%= link_to 'Delete', post_path(@post), method: :delete, data:{confirm: 'Are you sure ?'} %>
+</p>
+<% end %>
+

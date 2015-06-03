@@ -4294,7 +4294,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .breadcrumb > .active {
   color: #95a5a6;
 }
-.pagination {
+/*.pagination {
   display: inline-block;
   padding-left: 0;
   margin: 21px 0;
@@ -4386,7 +4386,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination-sm > li:last-child > span {
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
-}
+}*/
 .pager {
   padding-left: 0;
   margin: 21px 0;
